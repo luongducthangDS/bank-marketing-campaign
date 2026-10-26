@@ -79,15 +79,22 @@
    * Cuộc gọi 3: Tỷ lệ chuyển đổi đạt **10.8%**.
    * **Cuộc gọi 4: Tỷ lệ rơi tự do xuống 5.8%**!
    * **Từ cuộc gọi thứ 7 trở đi: Tỷ lệ chỉ còn vỏn vẹn 2.2%** — thấp hơn chi phí nhân công tối thiểu của tổng đài!
+
+![Diminishing Returns of Telemarketing](reports/figures/01_call_sequence_diminishing_returns.png)
+
 2. **Quy tắc 88/81 (3-Strike Sweet Spot):** **88.0% TẤT CẢ các hợp đồng mở sổ được chốt trong vòng 3 cuộc gọi đầu tiên** (chỉ chiếm 81.5% số cuộc gọi). Các cuộc gọi từ lần thứ 4 đến lần thứ 56 tiêu tốn tới **18.5% tổng công suất của tổng đài** (7,636 cuộc gọi) và ngốn **€24,800 chi phí nhân công trực tiếp**, nhưng hiệu quả gần như bằng không.
 3. **Ưu thế tuyệt đối của Kênh Di động (Cellular):** Gọi vào số **Di động (Cellular) đạt tỷ lệ chuyển đổi 14.7%**, cao gấp **2.8 lần** so với gọi vào số **Máy bàn cố định (Landline - 5.2%)**.
-4. **Độ co giãn theo Kinh tế vĩ mô:** Khi lãi suất liên ngân hàng Euribor 3M tăng trên 4.0%, tỷ lệ mở sổ tiết kiệm sụt giảm thảm hại tới **81%** (từ 23.4% rớt xuống 4.4%) vì người dân chuyển hướng sang trái phiếu và bất động sản.
+4. **Độ co giãn theo Kinh tế vĩ mô:** Khi lãi suất liên ngân hàng Euribor 3M tăng trên 4.0%, tỷ lệ mở sổ tiết kiệm sụt giảm thảm hại tới **80%** (từ 23.4% rớt xuống **4.8%**) vì người dân chuyển hướng sang trái phiếu và bất động sản.
+
+![Macroeconomic Euribor Sensitivity](reports/figures/03_macro_euribor_conversion_drop.png)
 
 ### 08. Data Visualization & Dashboard Features
-* **Visual 1 (Diminishing Returns Curve):** Đường cong sụt giảm tỷ lệ chuyển đổi từ 13.0% (cuộc 1) xuống 2.2% (cuộc 7+), làm nổi bật ranh giới 3 cuộc gọi.
-* **Visual 2 (Channel Conversion Bar):** So sánh trực quan tỷ lệ chuyển đổi giữa Cellular (14.7%) vs Telephone (5.2%).
-* **Visual 3 (Macro Euribor Sensitivity):** Tỷ lệ chuyển đổi phân theo 4 dải lãi suất Euribor 3M (<2%, 2-3%, 3-4%, >4%).
-* **Visual 4 (Simulated ROI & Cumulative Value):** Đường cong lợi nhuận ròng và ROI tài chính tích lũy theo số lần liên lạc.
+* **Visual 1 (Diminishing Returns Curve):** Đường cong sụt giảm tỷ lệ chuyển đổi từ 13.0% (cuộc 1) xuống 6.0% / 2.2% (`reports/figures/01_call_sequence_diminishing_returns.png`).
+* **Visual 2 (3-Strike Efficiency Audit):** So sánh hiệu quả công suất và lượng chuyển đổi khi áp dụng chính sách 3 lần gọi (`reports/figures/02_3strike_efficiency_comparison.png`).
+* **Visual 3 (Macro Euribor Sensitivity):** Tỷ lệ chuyển đổi phân theo 4 dải lãi suất Euribor 3M (<2%, 2-3%, 3-4%, >4%) (`reports/figures/03_macro_euribor_conversion_drop.png`).
+* **Visual 4 (Executive Cockpit):** Tổng thể bức tranh hiệu suất telesales và mô phỏng chính sách can thiệp (`reports/figures/00_dashboard_preview.png`).
+
+![3-Strike Efficiency Policy Comparison](reports/figures/02_3strike_efficiency_comparison.png)
 
 ### 09. Standardized 5-Step Storytelling
 
@@ -100,7 +107,7 @@
 
 #### Câu chuyện 2: Đòn bẩy từ Kênh liên lạc và Bối cảnh kinh tế vĩ mô
 * **1. Question:** Tại sao cùng một kịch bản telesales nhưng có những tháng tỷ lệ chốt sổ lên tới 23% trong khi có những tháng chỉ lẹt đẹt 4%?
-* **2. Evidence:** Gọi di động đạt 14.7% chuyển đổi trong khi máy bàn chỉ đạt 5.2%. Vào các tháng lãi suất Euribor 3M thấp (<2%), chuyển đổi đạt 23.4%; nhưng khi Euribor >4%, chuyển đổi rớt xuống 4.4%.
+* **2. Evidence:** Gọi di động đạt 14.7% chuyển đổi trong khi máy bàn chỉ đạt 5.2%. Vào các tháng lãi suất Euribor 3M thấp (<2%), chuyển đổi đạt 23.4%; nhưng khi Euribor >4%, chuyển đổi rớt xuống 4.8%.
 * **3. Investigation:** Khi lãi suất thị trường tăng cao (>4%), các kênh đầu tư thay thế (trái phiếu chính phủ, chứng khoán) trở nên hấp dẫn hơn sản phẩm tiền gửi kỳ hạn của ngân hàng. Gọi vào máy bàn thường gặp người lớn tuổi hoặc gọi vào giờ hành chính không ai bắt máy.
 * **4. Insight:** Hiệu quả chiến dịch telesales chịu sự chi phối mạnh mẽ của kênh tiếp cận và bối cảnh vĩ mô; không thể ép chỉ tiêu doanh số như nhau trong mọi điều kiện lãi suất.
 * **5. Action:** Ưu tiên 100% tài nguyên gọi cho số di động; tạm hoãn các đợt phát động chiến dịch huy động tiền gửi kỳ hạn dài khi thị trường bước vào chu kỳ thắt chặt tiền tệ (Euribor > 4.0%).
