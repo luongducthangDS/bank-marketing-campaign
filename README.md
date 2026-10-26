@@ -2,6 +2,8 @@
 
 Analysis of **41,188 telemarketing contacts** from the Portuguese Bank Marketing dataset (UCI Machine Learning Repository). It assesses call center operational efficiency, exposes the fatal trap of Data Leakage in telemarketing models, quantifies diminishing returns per contact, and designs an optimized lead allocation policy backed by an interactive dashboard.
 
+![Dashboard](reports/figures/00_dashboard_preview.png)
+
 ## Executive Answer
 
 **Telemarketers are over-calling cold leads past the point of negative return.** The baseline conversion rate is **11.27%** (4,640 term deposit subscribers). However, **88.0% of all conversions are secured within the first 3 calls**. Calls 4 through 56 consume **18.5% of sales capacity** (7,636 dials) and €24.8k in labor, but yield diminishing returns (<2.5% conversion).
