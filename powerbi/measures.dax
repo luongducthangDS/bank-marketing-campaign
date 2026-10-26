@@ -1,0 +1,54 @@
+// Power BI DAX Measures for Bank Marketing Campaign & ROI Model
+// Relationships (Single direction):
+// fact_campaign_calls[profile_id] -> dim_client_profile[profile_id]
+
+Total Contacts = COUNTROWS ( fact_campaign_calls )
+
+Subscribed Clients = 
+CALCULATE (
+    COUNTROWS ( fact_campaign_calls ),
+    fact_campaign_calls[is_subscribed] = TRUE ()
+)
+
+Conversion Rate % = 
+DIVIDE ( [Subscribed Clients], [Total Contacts], 0 )
+
+// Labor & Dialing Costs
+Total Labor Cost (EUR) = 
+SUM ( fact_campaign_calls[simulated_call_cost_eur] )
+
+Cost Per Conversion (CAC) = 
+DIVIDE ( [Total Labor Cost (EUR)], [Subscribed Clients], 0 )
+
+// Revenue and ROI Simulation
+Simulated Gross Value (EUR) = 
+SUM ( fact_campaign_calls[simulated_revenue_eur] )
+
+Net Campaign Value (EUR) = 
+[Simulated Gross Value (EUR)] - [Total Labor Cost (EUR)]
+
+Campaign ROI % = 
+DIVIDE ( [Net Campaign Value (EUR)], [Total Labor Cost (EUR)], 0 )
+
+// Excess / Fatigue Calls (> 3 Contacts)
+Excess Contacts Count = 
+CALCULATE (
+    COUNTROWS ( fact_campaign_calls ),
+    fact_campaign_calls[is_excess_call] = TRUE ()
+)
+
+Excess Cost (EUR) = 
+CALCULATE (
+    [Total Labor Cost (EUR)],
+    fact_campaign_calls[is_excess_call] = TRUE ()
+)
+
+Excess Cost Share % = 
+DIVIDE ( [Excess Cost (EUR)], [Total Labor Cost (EUR)], 0 )
+
+// Baseline Conversion Comparison
+Baseline Conversion Rate % = 
+CALCULATE (
+    [Conversion Rate %],
+    REMOVEFILTERS ( dim_client_profile )
+)

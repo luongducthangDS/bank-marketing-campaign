@@ -1,0 +1,149 @@
+{
+  "kpis": {
+    "total_contacts": 41188,
+    "total_subscriptions": 4640,
+    "conversion_rate_pct": 11.27,
+    "total_labor_cost_eur": 129869.2,
+    "total_gross_value_eur": 556800.0,
+    "simulated_net_profit_eur": 426930.8,
+    "simulated_roi_pct": 328.7
+  },
+  "call_fatigue_curve": [
+    {
+      "campaign_contacts": 1,
+      "contacts_count": 17642,
+      "subscriptions": 2300,
+      "conversion_rate_pct": 13.04,
+      "labor_cost_eur": 55397.7
+    },
+    {
+      "campaign_contacts": 2,
+      "contacts_count": 10570,
+      "subscriptions": 1211,
+      "conversion_rate_pct": 11.46,
+      "labor_cost_eur": 35214.07
+    },
+    {
+      "campaign_contacts": 3,
+      "contacts_count": 5341,
+      "subscriptions": 574,
+      "conversion_rate_pct": 10.75,
+      "labor_cost_eur": 17361.94
+    },
+    {
+      "campaign_contacts": 4,
+      "contacts_count": 2651,
+      "subscriptions": 249,
+      "conversion_rate_pct": 9.39,
+      "labor_cost_eur": 8208.82
+    },
+    {
+      "campaign_contacts": 5,
+      "contacts_count": 1599,
+      "subscriptions": 120,
+      "conversion_rate_pct": 7.5,
+      "labor_cost_eur": 4635.12
+    },
+    {
+      "campaign_contacts": 6,
+      "contacts_count": 979,
+      "subscriptions": 75,
+      "conversion_rate_pct": 7.66,
+      "labor_cost_eur": 2823.0
+    },
+    {
+      "campaign_contacts": 7,
+      "contacts_count": 629,
+      "subscriptions": 38,
+      "conversion_rate_pct": 6.04,
+      "labor_cost_eur": 1800.15
+    }
+  ],
+  "three_strike_policy_comparison": [
+    {
+      "is_excess_call": false,
+      "contacts_count": 33553,
+      "contacts_share_pct": 81.46,
+      "subscriptions": 4085,
+      "subscriptions_share_pct": 88.04,
+      "conversion_rate_pct": 12.17,
+      "total_labor_cost_eur": 107973.71
+    },
+    {
+      "is_excess_call": true,
+      "contacts_count": 7635,
+      "contacts_share_pct": 18.54,
+      "subscriptions": 555,
+      "subscriptions_share_pct": 11.96,
+      "conversion_rate_pct": 7.27,
+      "total_labor_cost_eur": 21895.49
+    }
+  ],
+  "macro_environment": [
+    {
+      "euribor_environment": "Low (<2.0% Stimulus)",
+      "contacts_count": 13498,
+      "subscriptions": 3301,
+      "conversion_rate_pct": 24.46
+    },
+    {
+      "euribor_environment": "Moderate (2.0 - 4.0%)",
+      "contacts_count": 14,
+      "subscriptions": 1,
+      "conversion_rate_pct": 7.14
+    },
+    {
+      "euribor_environment": "High (>4.0% Tightening)",
+      "contacts_count": 27676,
+      "subscriptions": 1338,
+      "conversion_rate_pct": 4.83
+    }
+  ],
+  "leakage_free_odds_ratios": [
+    {
+      "feature": "Campaign Contacts Count",
+      "odds_ratio": 0.945,
+      "ci_95_pct": [
+        0.928,
+        0.963
+      ],
+      "interpretation": "Decreases conversion"
+    },
+    {
+      "feature": "Cellular Contact",
+      "odds_ratio": 1.358,
+      "ci_95_pct": [
+        1.24,
+        1.487
+      ],
+      "interpretation": "Boosts conversion"
+    },
+    {
+      "feature": "Previously Contacted",
+      "odds_ratio": 3.699,
+      "ci_95_pct": [
+        2.65,
+        5.164
+      ],
+      "interpretation": "Boosts conversion"
+    },
+    {
+      "feature": "Previous Campaign Success",
+      "odds_ratio": 1.846,
+      "ci_95_pct": [
+        1.303,
+        2.615
+      ],
+      "interpretation": "Boosts conversion"
+    },
+    {
+      "feature": "Euribor 3M Rate",
+      "odds_ratio": 0.661,
+      "ci_95_pct": [
+        0.647,
+        0.675
+      ],
+      "interpretation": "Decreases conversion"
+    }
+  ]
+}
